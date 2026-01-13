@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="line">Hi, I'm</span>
+                    <span class="line name">Kajageshan</span>
+                    <span class="line dynamic-role">
+                        <span id="typing-role" class="typing-role"></span><span class="typing-caret"></span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    I create beautiful, functional, and user-friendly websites that bring your ideas to life.
+                </p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="profile-card slide-in">
+                        <div class="profile-border"></div>
+                        <picture>
+                            <source srcset="assets/home.jpg" type="image/jpg">
+                            <img src="assets/home.jpg" alt="Profile photo" class="profile-photo">
+                        </picture>
+                        <div class="profile-badge">
+                            <i class="fas fa-circle"></i>
+                            Available for Work
+                        </div>
+                    </div>
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Well-structured, maintainable code that follows best practices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Designing</h3>
+                    <p>Unique and modern designs that capture attention</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive</h3>
+                    <p>Perfect experience across all devices and screen sizes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Performance</h3>
+                    <p>Optimized for speed and excellent user experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section 
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Cups of Coffee</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    -->
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title-center">What I Do</h2>
+                <p class="section-subtitle">Comprehensive web development and design services</p>
+            </div>
+            <div class="services-carousel-wrapper">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom website development using modern technologies and frameworks. From simple landing
+                            pages to complex web applications.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Frontend Development</li>
+                            <li><i class="fas fa-check"></i> Backend Development</li>
+                            <li><i class="fas fa-check"></i> Full Stack Solutions</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Creating intuitive and beautiful user interfaces that provide exceptional user experiences.
+                            Design that converts visitors into customers.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> User Interface Design</li>
+                            <li><i class="fas fa-check"></i> User Experience Design</li>
+                            <li><i class="fas fa-check"></i> Prototyping</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Responsive</h3>
+                        <p>Ensuring your website looks perfect on all devices. Mobile-first approach for optimal
+                            performance across smartphones, tablets, and desktops.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Mobile Optimization</li>
+                            <li><i class="fas fa-check"></i> Cross-browser Testing</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Improving your website's visibility in search engines. Technical SEO, content optimization,
+                            and performance enhancements.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Technical SEO</li>
+                            <li><i class="fas fa-check"></i> Performance Optimization</li>
+                            <li><i class="fas fa-check"></i> Analytics Integration</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Content Creation</h3>
+                        <p>Engaging content that tells your story. From copywriting to visual content creation that
+                            resonates with your audience.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Content Writing</li>
+                            <li><i class="fas fa-check"></i> Graphic Design</li>
+                            <li><i class="fas fa-check"></i> Video Editing</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Maintenance & Support</h3>
+                        <p>Ongoing support and maintenance to keep your website running smoothly. Regular updates,
+                            security patches, and technical support.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Regular Updates</li>
+                            <li><i class="fas fa-check"></i> Security Monitoring</li>
+                            <li><i class="fas fa-check"></i> 24/7 Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-pagination"></div>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me-section">
+        <div class="container">
+            <div class="about-me-content">
+                <div class="about-me-image">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-border"></div>
+                        <img src="assets/home.jpg" alt="About Me" class="about-photo">
+                        <div class="about-image-shapes">
+                            <div class="about-shape shape-1"></div>
+                            <div class="about-shape shape-2"></div>
+                            <div class="about-shape shape-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-me-text">
+                   
+                    <div class="about-content">
+                        <p class="about-description">
+                           I am a passionate web developer and designer who creates clean, responsive, and user-friendly digital experiences by combining strong frontend and backend skills with modern design thinking. I focus on building visually appealing websites and web applications that deliver smooth performance and meaningful user experiences.
+                        </p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Positive Attitude</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quick Learner</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Team Player</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Self Motivated</span>
+                            </div>
+                        </div>
+                        <div class="about-buttons">
+                            <a href="about.html" class="btn btn-primary">About Me</a>
+                            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Clients Say Section -->
+    <section class="user-reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title-center">What Clients Say</h2>
+                <p class="section-subtitle">See what others are saying about their experience</p>
+            </div>
+
+            <div id="userReviewsGrid" class="user-reviews-grid">
+                <!-- User reviews will be loaded here dynamically -->
+            </div>
+
+            <div id="noReviewsMessage" class="no-reviews" style="display: none;">
+                <i class="fas fa-comments"></i>
+                <p>No reviews yet. Be the first to share your experience!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #060810;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <!-- About Us Column -->
+                    <div class="footer-column footer-about">
+                        <h3>About Us</h3>
+                        <p>I'm a passionate web developer, designer, and editor dedicated to creating beautiful,
+                            functional, and user-friendly digital experiences that bring your ideas to life.</p>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+94 778 149 517</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>kajankajan200407@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Tweet Column -->
+                    <div class="footer-column">
+                        <h3>Latest Tweet</h3>
+                        <div class="footer-tweets">
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Just launched a new portfolio website! Check it out and let me know what you think.
+                                    #WebDesign #Portfolio</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Working on some exciting new projects. Can't wait to share them with you all! Stay
+                                    tuned for updates.</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Always learning and improving. The journey of a web developer never ends!
+                                    #WebDevelopment #Learning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Column -->
+                    <div class="footer-column">
+                        <h3>Images</h3>
+                        <div class="footer-instagram">
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img1.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img2.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img4.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Our works</a>
+                    <a href="services.html">Services</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="contact.html">Contacts</a>
+                </nav>
+                <div class="footer-copyright">
+                    <span>© 2025-2030 Portfolio. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="home.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.services-grid');
+            const paginationContainer = document.querySelector('.carousel-pagination');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+
+            if (!track || !paginationContainer) return;
+
+            const originalCards = Array.from(track.querySelectorAll('.service-card'));
+            const totalOriginal = originalCards.length;
+
+            // Configuration
+            const AUTO_SLIDE_DELAY = 3500;
+            const TRANSITION_DURATION = 600; // ms
+
+            let currentIndex = 0;
+            let isAnimating = false;
+            let autoSlideTimer;
+            let cardsPerView = 3;
+
+            // Clone Helper: Clones nodes to start and end for infinite loop
+            const setupClones = () => {
+                // Clear existing clones if any (for resize)
+                const existingClones = track.querySelectorAll('.clone');
+                existingClones.forEach(el => el.remove());
+
+                // Determine visible cards based on screen width
+                cardsPerView = window.innerWidth <= 991 ? (window.innerWidth <= 768 ? 1 : 2) : 3;
+
+                // Clone all original cards to ensure we have enough buffer for seamless looping
+                // Start clones (copies of the end items)
+                originalCards.slice(-cardsPerView).forEach(card => {
+                    const clone = card.cloneNode(true);
+                    clone.classList.add('clone');
+                    track.insertBefore(clone, track.firstChild);
+                });
+
+                // End clones (copies of the start items)
+                originalCards.slice(0, cardsPerView).forEach(card => {
+                    const clone = card.cloneNode(true);
+                    clone.classList.add('clone');
+                    track.appendChild(clone);
+                });
+            };
+
+            // Setup Pagination Dots
+            const setupPagination = () => {
+                paginationContainer.innerHTML = '';
+                // Calculate total pages based on groups if needed, but per card is standard for this request
+                // The prompt implies a loop of 1,2,3 -> 4,5,6.
+                // However, infinite loop usually implies dot per slide "group" or per "item".
+                // Let's do dot per item for simplicity, or per group.
+                // Given "Slider moves from right to left to reveal Column 4, 5, 6", let's map dots to the starting index of the group.
+                // Actually, simplest UX for "infinite loop" is 1 dot per item or 1 dot per page.
+                // Let's stick to 1 dot per starting item to allow granular control, 
+                // but sync it so it feels natural.
+
+                // Better approach for pagination in infinite carousel: 1 dot per original item.
+                for (let i = 0; i < totalOriginal; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'pagination-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        if (isAnimating) return;
+                        stopAutoSlide();
+                        // slide to specific index
+                        moveToIndex(i + cardsPerView); // +cardsPerView because of start clones
+                        startAutoSlide();
+                    });
+                    paginationContainer.appendChild(dot);
+                }
+            };
+
+            const updatePagination = (realIndex) => {
+                const dots = paginationContainer.querySelectorAll('.pagination-dot');
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                // Normalize index to 0...totalOriginal-1
+                let normalizedIndex = (realIndex - cardsPerView) % totalOriginal;
+                if (normalizedIndex < 0) normalizedIndex += totalOriginal;
+
+                if (dots[normalizedIndex]) {
+                    dots[normalizedIndex].classList.add('active');
+                }
+            };
+
+            // Initial Setup
+            setupClones();
+            setupPagination();
+
+            // set initial position (show first original item)
+            // We need to wait for layout to be ready or force reflow for accurate widths?
+            // Just assume percentages work generally.
+            // But for `translateX`, pixels are safer if gap is involved, or percentages if carefully calc'd.
+            // Let's use percentage translation based on item width.
+
+            const getCardWidth = () => {
+                const card = track.querySelector('.service-card');
+                const style = window.getComputedStyle(card);
+                const width = card.offsetWidth;
+                const marginRight = parseFloat(style.marginRight || 0);
+                // Flex gap isn't margin, it's gap. 
+                // We need to calculate Full Item Width = (TrackWidth - (gap * (visible-1))) / visible + gap?
+                // Actually, simpler: track.children[0].offsetWidth + gap
+                // Let's assume gap is 2rem (32px) from CSS or read computed.
+                const gap = 32; // 2rem
+                // If mobile < 768px gap is 1rem (16px)
+                const currentGap = window.innerWidth <= 768 ? 16 : 32;
+                return width + currentGap;
+            };
+
+            // Initialize position
+            let currentTranslate = -cardsPerView * getCardWidth();
+            track.style.transform = `translateX(${currentTranslate}px)`;
+            currentIndex = cardsPerView; // Valid indices are from cardsPerView to cardsPerView+totalOriginal-1
+
+            const moveToIndex = (index, transition = true) => {
+                isAnimating = true;
+                currentIndex = index;
+
+                const cardWidth = getCardWidth();
+                const newTranslate = -index * cardWidth;
+
+                if (transition) {
+                    track.style.transition = `transform ${TRANSITION_DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+                } else {
+                    track.style.transition = 'none';
+                }
+
+                track.style.transform = `translateX(${newTranslate}px)`;
+
+                // Handle infinite loop logic after transition
+                if (transition) {
+                    setTimeout(() => {
+                        // Check bounds and jump smoothly if needed
+                        if (currentIndex >= totalOriginal + cardsPerView) {
+                            // Jump back to start of originals
+                            track.style.transition = 'none';
+                            currentIndex = cardsPerView;
+                            currentTranslate = -currentIndex * cardWidth;
+                            track.style.transform = `translateX(${currentTranslate}px)`;
+                        } else if (currentIndex < cardsPerView) {
+                            // Jump to end of originals
+                            track.style.transition = 'none';
+                            currentIndex = totalOriginal + cardsPerView - 1; // Last original item? No.
+                            // If we are at index 2 (clone of last item), we want to jump to index (totalOriginal + 2)
+                            // Basically: index 0 (clone of last) -> index totalOriginal
+                            currentIndex = currentIndex + totalOriginal;
+                            currentTranslate = -currentIndex * cardWidth;
+                            track.style.transform = `translateX(${currentTranslate}px)`;
+                        }
+                        isAnimating = false;
+                        updatePagination(currentIndex);
+                    }, TRANSITION_DURATION);
+                } else {
+                    isAnimating = false;
+                    updatePagination(currentIndex);
+                }
+            };
+
+            const nextSlide = () => {
+                if (isAnimating) return;
+                moveToIndex(currentIndex + 1); // Move 1 card at a time? 
+                // Logic: "Show Column 1, 2, 3... Slide... reveal Column 4, 5, 6."
+                // This implies moving 3 items at a time on desktop.
+                // Mobile: 1 item at a time.
+                // Let's clear up: "Slider moves from right to left to reveal Column 4, 5, 6."
+                // This definitely means a "page" turn.
+                // So step = cardsPerView.
+
+                // HOWEVER "loops seamlessly" usually works best item-by-item or page-by-page.
+                // Let's implement PAGE sliding specifically as requested.
+                // But pagination usually tracks pages then.
+                // Ok, let's adjust step.
+
+                // Actually, if we slide by `cardsPerView`, we might skip updates if totalOriginal isn't divisible perfectly?
+                // 6 is divisible by 3. So 2 pages.
+                // On mobile 1 col, 6 pages.
+
+                // Let's use `cardsPerView` as the step size.
+                /*
+                  Wait, if I have 6 items and show 3.
+                  Idx 3 (start).
+                  Next -> Idx 6. (Items 4,5,6).
+                  Next -> Idx 9 (Clone of 1,2,3). -> Resets to Idx 3.
+                */
+                // Changing logic to slide by 'cardsPerView' magnitude.
+                // But wait, `moveToIndex` takes an absolute index.
+                // If currentIndex is 3. +3 = 6.
+                // If we are at 6. +3 = 9.
+            };
+
+            const performSlide = (direction) => { // 1 for next, -1 for prev
+                if (isAnimating) return;
+                let step = cardsPerView;
+                // On mobile (1 card), step is 1. On desktop (3 cards), step is 3.
+                let newIndex = currentIndex + (direction * step);
+                moveToIndex(newIndex);
+            };
+
+            // Auto Slide
+            const startAutoSlide = () => {
+                stopAutoSlide();
+                autoSlideTimer = setInterval(() => {
+                    performSlide(1);
+                }, AUTO_SLIDE_DELAY);
+            };
+
+            const stopAutoSlide = () => {
+                clearInterval(autoSlideTimer);
+            };
+
+            // Event Listeners
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                performSlide(1);
+                startAutoSlide();
+            });
+
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                performSlide(-1);
+                startAutoSlide();
+            });
+
+            // Touch Swipe Support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                stopAutoSlide();
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startAutoSlide();
+            }, { passive: true });
+
+            const handleSwipe = () => {
+                const threshold = 50;
+                if (touchEndX < touchStartX - threshold) {
+                    performSlide(1); // Swipe Left -> Next
+                } else if (touchEndX > touchStartX + threshold) {
+                    performSlide(-1); // Swipe Right -> Prev
+                }
+            };
+
+            // Window Resize Handling
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    // Re-calculate everything
+                    setupClones();
+                    // Reset position to first page
+                    currentIndex = cardsPerView;
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(${-currentIndex * getCardWidth()}px)`;
+                    updatePagination(currentIndex);
+                }, 200);
+            });
+
+            // Initial Play
+            startAutoSlide();
+
+            // Hover pause
+            track.addEventListener('mouseenter', stopAutoSlide);
+            track.addEventListener('mouseleave', startAutoSlide);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Projects</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation (Hidden on login, shown after login) -->
+    <nav id="adminNav" class="navbar" style="display: none;">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio Admin</span>
+            </div>
+            <ul class="nav-menu">
+                <!-- <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li> -->
+                <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="admin.html" class="nav-link active">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section id="loginSection" class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-card">
+                    <h2>Admin Access</h2>
+                    <p>Enter password to access admin panel</p>
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="adminPassword">Password</label>
+                            <input type="password" id="adminPassword" name="password" required
+                                placeholder="Enter admin password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-lock"></i> Login
+                        </button>
+                        <p id="loginError" class="error-message"
+                            style="display: none; color: #ef4444; margin-top: 1rem; text-align: center;"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="adminSection" class="admin-section" style="display: none;">
+        <div class="container">
+            <!-- Admin Tabs -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="projects">
+                    <i class="fas fa-folder"></i> Projects
+                </button>
+                <button class="tab-btn" data-tab="skills">
+                    <i class="fas fa-code"></i> Skills
+                </button>
+                <button class="tab-btn" data-tab="messages">
+                    <i class="fas fa-envelope"></i> Contact Messages
+                </button>
+                <button class="tab-btn" data-tab="reviews">
+                    <i class="fas fa-star"></i> Reviews
+                </button>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="projectsTab" class="admin-tab-content active">
+                <h1 class="page-title">Add New Project</h1>
+                <p class="page-subtitle">Fill in the details to add a project to your portfolio</p>
+
+                <div class="admin-wrapper">
+                    <!-- Add Project Form -->
+                    <div class="admin-form-container">
+                        <form id="projectForm" class="admin-form">
+                            <div class="form-group">
+                                <label for="projectTitle">Project Title *</label>
+                                <input type="text" id="projectTitle" name="title" required
+                                    placeholder="e.g., E-Commerce Platform">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectDescription">Description *</label>
+                                <textarea id="projectDescription" name="description" rows="4" required
+                                    placeholder="Brief description of your project"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectCategory">Category *</label>
+                                <select id="projectCategory" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="web">Web Design</option>
+                                    <option value="app">Web App</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="social">Social media</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectTags">Technologies (comma separated) *</label>
+                                <input type="text" id="projectTags" name="tags" required
+                                    placeholder="e.g., React, Node.js, MongoDB">
+                            </div>
+
+                            <div class="form-group" id="imageFieldGroup" style="display: none;">
+                                <label for="projectImage">Upload Image (PNG, JPG) *</label>
+                                <input type="file" id="projectImageFile" name="imageFile"
+                                    accept="image/png,image/jpeg,image/jpg" style="display: none;">
+                                <div class="image-upload-wrapper">
+                                    <button type="button" class="image-upload-btn"
+                                        onclick="document.getElementById('projectImageFile').click()">
+                                        <i class="fas fa-upload"></i> Choose Image
+                                    </button>
+                                    <span id="imageFileName" class="image-file-name"></span>
+                                </div>
+                                <div id="imagePreview" class="image-preview" style="display: none;">
+                                    <img id="previewImg" src="" alt="Preview">
+                                    <button type="button" class="remove-image-btn" onclick="removeImage()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="projectImage" name="image">
+                                <small>Upload PNG or JPG image (Max 5MB). Required for Social Media projects</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectLink">Live Demo URL</label>
+                                <input type="url" id="projectLink" name="liveLink" placeholder="https://example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectGithub">GitHub URL</label>
+                                <input type="url" id="projectGithub" name="githubLink"
+                                    placeholder="https://github.com/username/project">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="projectPublished" name="published" checked>
+                                    <span>Publish immediately</span>
+                                </label>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i> Add Project
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Projects List -->
+                    <div class="projects-list-container">
+                        <h2>Your Projects</h2>
+                        <div id="projectsList" class="projects-list">
+                            <!-- Projects will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div id="skillsTab" class="admin-tab-content">
+                <h1 class="page-title">Manage Skills</h1>
+                <p class="page-subtitle">Add, edit, or delete your skills</p>
+
+                <div class="admin-wrapper">
+                    <!-- Add Skill Form -->
+                    <div class="admin-form-container">
+                        <form id="skillForm" class="admin-form">
+                            <div class="form-group">
+                                <label for="skillName">Skill Name *</label>
+                                <input type="text" id="skillName" name="name" required
+                                    placeholder="e.g., React, Node.js, Python">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="skillCategory">Category *</label>
+                                <select id="skillCategory" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="frontend">Frontend Development</option>
+                                    <option value="backend">Backend Development</option>
+                                    <option value="design">Design & Tools</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="skillPercentage">Percentage (0-100) *</label>
+                                <input type="number" id="skillPercentage" name="percentage" min="0" max="100" required
+                                    placeholder="e.g., 85">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="skillIcon">Icon Class (Font Awesome) *</label>
+                                <input type="text" id="skillIcon" name="icon" required
+                                    placeholder="e.g., fab fa-react, fas fa-code, fab fa-adobe">
+                                <div id="iconPreview" class="icon-preview" style="display: none;">
+                                    <span>Preview: </span>
+                                    <i id="previewIcon" class=""></i>
+                                </div>
+                                <small>
+                                    <strong>Format:</strong> Use Font Awesome icon classes<br>
+                                    <strong>Examples:</strong><br>
+                                    • Brand icons: <code>fab fa-react</code>, <code>fab fa-html5</code>,
+                                    <code>fab fa-node</code>, <code>fab fa-adobe</code><br>
+                                    • Solid icons: <code>fas fa-code</code>, <code>fas fa-database</code>,
+                                    <code>fas fa-server</code>, <code>fas fa-image</code>,
+                                    <code>fas fa-paint-brush</code><br>
+                                    <strong>Note:</strong> <code>fab fa-photoshop</code> doesn't exist. Use
+                                    <code>fab fa-adobe</code> (Adobe) or <code>fas fa-image</code> (Image icon)
+                                    instead<br>
+                                    <a href="https://fontawesome.com/icons" target="_blank"
+                                        style="color: var(--primary-color); text-decoration: underline;">Search all
+                                        icons →</a>
+                                </small>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i> Add Skill
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Skills List -->
+                    <div class="projects-list-container">
+                        <h2>Your Skills</h2>
+                        <div id="skillsList" class="projects-list">
+                            <!-- Skills will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Messages Tab -->
+            <div id="messagesTab" class="admin-tab-content">
+                <h1 class="page-title">Contact Messages</h1>
+                <p class="page-subtitle">View and manage messages from visitors</p>
+
+                <div class="projects-list-container">
+                    <div class="messages-header">
+                        <h2>All Messages</h2>
+                        <div class="messages-stats">
+                            <span id="totalMessages" class="stat-badge">0 Total</span>
+                            <span id="unreadMessages" class="stat-badge unread">0 Unread</span>
+                        </div>
+                    </div>
+                    <div id="messagesList" class="projects-list">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div id="reviewsTab" class="admin-tab-content">
+                <h1 class="page-title">Client Reviews</h1>
+                <p class="page-subtitle">View and manage reviews from clients and visitors</p>
+
+                <div class="projects-list-container">
+                    <div class="messages-header">
+                        <h2>All Reviews</h2>
+                        <div class="messages-stats">
+                            <span id="totalReviews" class="stat-badge">0 Total</span>
+                        </div>
+                    </div>
+                    <div id="reviewsList" class="projects-list">
+                        <!-- Reviews will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #060810;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <!-- About Us Column -->
+                    <div class="footer-column footer-about">
+                        <h3>About Us</h3>
+                        <p>I'm a passionate web developer, designer, and editor dedicated to creating beautiful,
+                            functional, and user-friendly digital experiences that bring your ideas to life.</p>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+94 778 149 517</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>kajankajan200407@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Tweet Column -->
+                    <div class="footer-column">
+                        <h3>Latest Tweet</h3>
+                        <div class="footer-tweets">
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Just launched a new portfolio website! Check it out and let me know what you think.
+                                    #WebDesign #Portfolio</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Working on some exciting new projects. Can't wait to share them with you all! Stay
+                                    tuned for updates.</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Always learning and improving. The journey of a web developer never ends!
+                                    #WebDevelopment #Learning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Column -->
+                    <div class="footer-column">
+                        <h3>Images</h3>
+                        <div class="footer-instagram">
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="../assets/img1.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="../assets/img.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="../assets/img2.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="../assets/img4.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <nav class="footer-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="../projects.html">Our works</a>
+                    <a href="../services.html">Services</a>
+                    <a href="../skills.html">Skills</a>
+                    <a href="../contact.html">Contacts</a>
+                </nav>
+                <div class="footer-copyright">
+                    <span>© 2025-2030 Portfolio. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

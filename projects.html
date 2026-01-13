@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="breadcrumb.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section" data-page="projects">
+        <div class="container">
+            <div class="breadcrumb-heading">
+                <h1>Projects</h1>
+                <p>Explore my latest work and creative solutions</p>
+            </div>
+            <nav class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <span class="breadcrumb-separator">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+                <span class="breadcrumb-item active">Projects</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Projects Hero -->
+
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">Web App</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically here -->
+            </div>
+            <div id="emptyState" class="empty-projects" style="display: none;">
+                <div class="empty-content">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>No projects available</h3>
+                    <p>Projects will be displayed here soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Image Modal (Full View) -->
+    <div id="imageModal" class="image-modal">
+        <span id="imageModalClose" class="image-modal-close">&times;</span>
+        <img id="modalImage" class="image-modal-content" alt="Project preview">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #060810;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <!-- About Us Column -->
+                    <div class="footer-column footer-about">
+                        <h3>About Us</h3>
+                        <p>I'm a passionate web developer, designer, and editor dedicated to creating beautiful,
+                            functional, and user-friendly digital experiences that bring your ideas to life.</p>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+94 778 149 517</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>kajankajan200407@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Tweet Column -->
+                    <div class="footer-column">
+                        <h3>Latest Tweet</h3>
+                        <div class="footer-tweets">
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Just launched a new portfolio website! Check it out and let me know what you think.
+                                    #WebDesign #Portfolio</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Working on some exciting new projects. Can't wait to share them with you all! Stay
+                                    tuned for updates.</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Always learning and improving. The journey of a web developer never ends!
+                                    #WebDevelopment #Learning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Column -->
+                    <div class="footer-column">
+                        <h3>Images</h3>
+                        <div class="footer-instagram">
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img1.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img2.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img4.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Our works</a>
+                    <a href="services.html">Services</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="contact.html">Contacts</a>
+                </nav>
+                <div class="footer-copyright">
+                    <span>© 2025-2030 Portfolio. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+
+</html>
