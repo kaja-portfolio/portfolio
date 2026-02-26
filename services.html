@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Stories - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="breadcrumb.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section" data-page="services">
+        <div class="container">
+            <div class="breadcrumb-heading">
+                <h1>Services</h1>
+                <p>What our clients say about their experience</p>
+            </div>
+            <nav class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <span class="breadcrumb-separator">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+                <span class="breadcrumb-item active">Services</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <!-- <section class="services-hero">
+        <div class="container">
+            <h1 class="page-title">What Our Clients Say</h1>
+            <p class="page-subtitle">Real stories from satisfied clients about their experience working with us</p>
+        </div>
+    </section> -->
+
+    <!-- Review Form Section -->
+    <section class="review-form-section">
+        <div class="container">
+            <h2 class="section-title-center">Share Your Experience</h2>
+            <p class="section-subtitle">Have you worked with us? We'd love to hear about your experience!</p>
+
+            <div class="review-form-container">
+                <form id="reviewForm" class="review-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name *</label>
+                            <input type="text" id="reviewerName" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewerRole">Your Role/Company</label>
+                            <input type="text" id="reviewerRole" name="role" placeholder="e.g., CEO, Founder, Manager">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewRating">Rating *</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" class="star-label"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" class="star-label"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" class="star-label"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" class="star-label"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" class="star-label"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewProject">Project Type</label>
+                        <input type="text" id="reviewProject" name="project"
+                            placeholder="e.g., Website Design, Web App, E-Commerce">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review *</label>
+                        <textarea id="reviewMessage" name="message" rows="6" required
+                            placeholder="Tell us about your experience working with us..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Reviews Section -->
+    <section class="user-reviews-section">
+        <div class="container">
+            <h2 class="section-title-center">Client Reviews</h2>
+            <p class="section-subtitle">See what others are saying about their experience</p>
+
+            <div id="userReviewsGrid" class="user-reviews-grid">
+                <!-- User reviews will be loaded here dynamically -->
+            </div>
+
+            <div id="noReviewsMessage" class="no-reviews" style="display: none;">
+                <i class="fas fa-comments"></i>
+                <p>No reviews yet. Be the first to share your experience!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Happy Clients</h2>
+                <p>Experience the same satisfaction and success. Let's work together on your next project!</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #060810;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <!-- About Us Column -->
+                    <div class="footer-column footer-about">
+                        <h3>About Us</h3>
+                        <p>I'm a passionate web developer, designer, and editor dedicated to creating beautiful,
+                            functional, and user-friendly digital experiences that bring your ideas to life.</p>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+94 778 149 517</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>kajankajan200407@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Tweet Column -->
+                    <div class="footer-column">
+                        <h3>Latest Tweet</h3>
+                        <div class="footer-tweets">
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Just launched a new portfolio website! Check it out and let me know what you think.
+                                    #WebDesign #Portfolio</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Working on some exciting new projects. Can't wait to share them with you all! Stay
+                                    tuned for updates.</p>
+                            </div>
+                            <div class="footer-tweet">
+                                <i class="fab fa-twitter"></i>
+                                <p>Always learning and improving. The journey of a web developer never ends!
+                                    #WebDevelopment #Learning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Column -->
+                    <div class="footer-column">
+                        <h3>Images</h3>
+                        <div class="footer-instagram">
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img1.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img2.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                            <div class="footer-instagram-item">
+                                <div class="footer-instagram-placeholder">
+                                    <img src="assets/img4.png" alt="Profile photo" class="profile-photo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Our works</a>
+                    <a href="services.html">Services</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="contact.html">Contacts</a>
+                </nav>
+                <div class="footer-copyright">
+                    <span>© 2025-2030 Portfolio. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="services.js"></script>
+</body>
+
+</html>
