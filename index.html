@@ -24,7 +24,14 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">My Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="website-projects.html" class="dropdown-link">Website</a></li>
+                        <li><a href="design-projects.html" class="dropdown-link">Design</a></li>
+                        <li><a href="other-projects.html" class="dropdown-link">Other Work</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -258,13 +265,19 @@
                         </ul>
                     </div>
                 </div>
-
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-pagination"></div>
-                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
             </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" id="services-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-pagination" id="services-pagination"></div>
+                <button class="carousel-btn next-btn" id="services-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
         </div>
     </section>
 
@@ -433,277 +446,88 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const track = document.querySelector('.services-grid');
-            const paginationContainer = document.querySelector('.carousel-pagination');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.getElementById('services-prev');
+            const nextBtn = document.getElementById('services-next');
+            const paginationContainer = document.getElementById('services-pagination');
+            
+            if (!track || !prevBtn || !nextBtn) return;
 
-            if (!track || !paginationContainer) return;
-
-            const originalCards = Array.from(track.querySelectorAll('.service-card'));
-            const totalOriginal = originalCards.length;
-
-            // Configuration
-            const AUTO_SLIDE_DELAY = 3500;
-            const TRANSITION_DURATION = 600; // ms
-
+            const cards = Array.from(track.children);
+            const totalCards = cards.length;
+            
+            let cardsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 991 ? 2 : 3);
             let currentIndex = 0;
-            let isAnimating = false;
-            let autoSlideTimer;
-            let cardsPerView = 3;
-
-            // Clone Helper: Clones nodes to start and end for infinite loop
-            const setupClones = () => {
-                // Clear existing clones if any (for resize)
-                const existingClones = track.querySelectorAll('.clone');
-                existingClones.forEach(el => el.remove());
-
-                // Determine visible cards based on screen width
-                cardsPerView = window.innerWidth <= 991 ? (window.innerWidth <= 768 ? 1 : 2) : 3;
-
-                // Clone all original cards to ensure we have enough buffer for seamless looping
-                // Start clones (copies of the end items)
-                originalCards.slice(-cardsPerView).forEach(card => {
-                    const clone = card.cloneNode(true);
-                    clone.classList.add('clone');
-                    track.insertBefore(clone, track.firstChild);
-                });
-
-                // End clones (copies of the start items)
-                originalCards.slice(0, cardsPerView).forEach(card => {
-                    const clone = card.cloneNode(true);
-                    clone.classList.add('clone');
-                    track.appendChild(clone);
-                });
-            };
-
-            // Setup Pagination Dots
-            const setupPagination = () => {
+            
+            const maxIndex = () => Math.max(0, totalCards - cardsPerView);
+            
+            const renderPagination = () => {
+                if (!paginationContainer) return;
                 paginationContainer.innerHTML = '';
-                // Calculate total pages based on groups if needed, but per card is standard for this request
-                // The prompt implies a loop of 1,2,3 -> 4,5,6.
-                // However, infinite loop usually implies dot per slide "group" or per "item".
-                // Let's do dot per item for simplicity, or per group.
-                // Given "Slider moves from right to left to reveal Column 4, 5, 6", let's map dots to the starting index of the group.
-                // Actually, simplest UX for "infinite loop" is 1 dot per item or 1 dot per page.
-                // Let's stick to 1 dot per starting item to allow granular control, 
-                // but sync it so it feels natural.
-
-                // Better approach for pagination in infinite carousel: 1 dot per original item.
-                for (let i = 0; i < totalOriginal; i++) {
+                const pages = maxIndex() + 1;
+                for (let i = 0; i < pages; i++) {
                     const dot = document.createElement('button');
-                    dot.className = 'pagination-dot';
-                    if (i === 0) dot.classList.add('active');
+                    dot.classList.add('pagination-dot');
+                    if (i === currentIndex) dot.classList.add('active');
                     dot.addEventListener('click', () => {
-                        if (isAnimating) return;
-                        stopAutoSlide();
-                        // slide to specific index
-                        moveToIndex(i + cardsPerView); // +cardsPerView because of start clones
-                        startAutoSlide();
+                        currentIndex = i;
+                        updateSlider();
                     });
                     paginationContainer.appendChild(dot);
                 }
             };
-
-            const updatePagination = (realIndex) => {
-                const dots = paginationContainer.querySelectorAll('.pagination-dot');
-                dots.forEach(dot => dot.classList.remove('active'));
-
-                // Normalize index to 0...totalOriginal-1
-                let normalizedIndex = (realIndex - cardsPerView) % totalOriginal;
-                if (normalizedIndex < 0) normalizedIndex += totalOriginal;
-
-                if (dots[normalizedIndex]) {
-                    dots[normalizedIndex].classList.add('active');
+            
+            const updateSlider = () => {
+                const cardWidth = cards[0].offsetWidth;
+                const actualGap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                
+                const moveAmount = currentIndex * (cardWidth + actualGap);
+                track.style.transform = `translate3d(-${moveAmount}px, 0, 0)`;
+                
+                if (paginationContainer) {
+                    Array.from(paginationContainer.children).forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
                 }
             };
 
-            // Initial Setup
-            setupClones();
-            setupPagination();
-
-            // set initial position (show first original item)
-            // We need to wait for layout to be ready or force reflow for accurate widths?
-            // Just assume percentages work generally.
-            // But for `translateX`, pixels are safer if gap is involved, or percentages if carefully calc'd.
-            // Let's use percentage translation based on item width.
-
-            const getCardWidth = () => {
-                const card = track.querySelector('.service-card');
-                const style = window.getComputedStyle(card);
-                const width = card.offsetWidth;
-                const marginRight = parseFloat(style.marginRight || 0);
-                // Flex gap isn't margin, it's gap. 
-                // We need to calculate Full Item Width = (TrackWidth - (gap * (visible-1))) / visible + gap?
-                // Actually, simpler: track.children[0].offsetWidth + gap
-                // Let's assume gap is 2rem (32px) from CSS or read computed.
-                const gap = 32; // 2rem
-                // If mobile < 768px gap is 1rem (16px)
-                const currentGap = window.innerWidth <= 768 ? 16 : 32;
-                return width + currentGap;
-            };
-
-            // Initialize position
-            let currentTranslate = -cardsPerView * getCardWidth();
-            track.style.transform = `translateX(${currentTranslate}px)`;
-            currentIndex = cardsPerView; // Valid indices are from cardsPerView to cardsPerView+totalOriginal-1
-
-            const moveToIndex = (index, transition = true) => {
-                isAnimating = true;
-                currentIndex = index;
-
-                const cardWidth = getCardWidth();
-                const newTranslate = -index * cardWidth;
-
-                if (transition) {
-                    track.style.transition = `transform ${TRANSITION_DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+            const goToNext = () => {
+                if (currentIndex < maxIndex()) {
+                    currentIndex++;
                 } else {
-                    track.style.transition = 'none';
+                    currentIndex = 0;
                 }
+                updateSlider();
+            };
 
-                track.style.transform = `translateX(${newTranslate}px)`;
-
-                // Handle infinite loop logic after transition
-                if (transition) {
-                    setTimeout(() => {
-                        // Check bounds and jump smoothly if needed
-                        if (currentIndex >= totalOriginal + cardsPerView) {
-                            // Jump back to start of originals
-                            track.style.transition = 'none';
-                            currentIndex = cardsPerView;
-                            currentTranslate = -currentIndex * cardWidth;
-                            track.style.transform = `translateX(${currentTranslate}px)`;
-                        } else if (currentIndex < cardsPerView) {
-                            // Jump to end of originals
-                            track.style.transition = 'none';
-                            currentIndex = totalOriginal + cardsPerView - 1; // Last original item? No.
-                            // If we are at index 2 (clone of last item), we want to jump to index (totalOriginal + 2)
-                            // Basically: index 0 (clone of last) -> index totalOriginal
-                            currentIndex = currentIndex + totalOriginal;
-                            currentTranslate = -currentIndex * cardWidth;
-                            track.style.transform = `translateX(${currentTranslate}px)`;
-                        }
-                        isAnimating = false;
-                        updatePagination(currentIndex);
-                    }, TRANSITION_DURATION);
+            const goToPrev = () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
                 } else {
-                    isAnimating = false;
-                    updatePagination(currentIndex);
+                    currentIndex = maxIndex();
                 }
+                updateSlider();
             };
 
-            const nextSlide = () => {
-                if (isAnimating) return;
-                moveToIndex(currentIndex + 1); // Move 1 card at a time? 
-                // Logic: "Show Column 1, 2, 3... Slide... reveal Column 4, 5, 6."
-                // This implies moving 3 items at a time on desktop.
-                // Mobile: 1 item at a time.
-                // Let's clear up: "Slider moves from right to left to reveal Column 4, 5, 6."
-                // This definitely means a "page" turn.
-                // So step = cardsPerView.
+            nextBtn.addEventListener('click', goToNext);
+            prevBtn.addEventListener('click', goToPrev);
 
-                // HOWEVER "loops seamlessly" usually works best item-by-item or page-by-page.
-                // Let's implement PAGE sliding specifically as requested.
-                // But pagination usually tracks pages then.
-                // Ok, let's adjust step.
-
-                // Actually, if we slide by `cardsPerView`, we might skip updates if totalOriginal isn't divisible perfectly?
-                // 6 is divisible by 3. So 2 pages.
-                // On mobile 1 col, 6 pages.
-
-                // Let's use `cardsPerView` as the step size.
-                /*
-                  Wait, if I have 6 items and show 3.
-                  Idx 3 (start).
-                  Next -> Idx 6. (Items 4,5,6).
-                  Next -> Idx 9 (Clone of 1,2,3). -> Resets to Idx 3.
-                */
-                // Changing logic to slide by 'cardsPerView' magnitude.
-                // But wait, `moveToIndex` takes an absolute index.
-                // If currentIndex is 3. +3 = 6.
-                // If we are at 6. +3 = 9.
-            };
-
-            const performSlide = (direction) => { // 1 for next, -1 for prev
-                if (isAnimating) return;
-                let step = cardsPerView;
-                // On mobile (1 card), step is 1. On desktop (3 cards), step is 3.
-                let newIndex = currentIndex + (direction * step);
-                moveToIndex(newIndex);
-            };
-
-            // Auto Slide
-            const startAutoSlide = () => {
-                stopAutoSlide();
-                autoSlideTimer = setInterval(() => {
-                    performSlide(1);
-                }, AUTO_SLIDE_DELAY);
-            };
-
-            const stopAutoSlide = () => {
-                clearInterval(autoSlideTimer);
-            };
-
-            // Event Listeners
-            if (nextBtn) nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                performSlide(1);
-                startAutoSlide();
-            });
-
-            if (prevBtn) prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                performSlide(-1);
-                startAutoSlide();
-            });
-
-            // Touch Swipe Support
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            track.addEventListener('touchstart', (e) => {
-                stopAutoSlide();
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            track.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startAutoSlide();
-            }, { passive: true });
-
-            const handleSwipe = () => {
-                const threshold = 50;
-                if (touchEndX < touchStartX - threshold) {
-                    performSlide(1); // Swipe Left -> Next
-                } else if (touchEndX > touchStartX + threshold) {
-                    performSlide(-1); // Swipe Right -> Prev
-                }
-            };
-
-            // Window Resize Handling
-            let resizeTimer;
             window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    // Re-calculate everything
-                    setupClones();
-                    // Reset position to first page
-                    currentIndex = cardsPerView;
-                    track.style.transition = 'none';
-                    track.style.transform = `translateX(${-currentIndex * getCardWidth()}px)`;
-                    updatePagination(currentIndex);
-                }, 200);
+                const newCardsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 991 ? 2 : 3);
+                if (newCardsPerView !== cardsPerView) {
+                    cardsPerView = newCardsPerView;
+                    if (currentIndex > maxIndex()) {
+                        currentIndex = maxIndex();
+                    }
+                    renderPagination();
+                }
+                updateSlider();
             });
 
-            // Initial Play
-            startAutoSlide();
-
-            // Hover pause
-            track.addEventListener('mouseenter', stopAutoSlide);
-            track.addEventListener('mouseleave', startAutoSlide);
+            // Initial setup
+            renderPagination();
+            updateSlider();
         });
     </script>
-
 </body>
 
 </html>

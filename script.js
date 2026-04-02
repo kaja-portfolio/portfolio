@@ -12,9 +12,34 @@ if (hamburger) {
 
     // Close menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            // If it's a dropdown toggle, don't close the menu
+            const parentLi = link.closest('.has-dropdown');
+            if (parentLi && window.innerWidth <= 768) {
+                e.preventDefault();
+                parentLi.classList.toggle('active');
+                return;
+            }
+            
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            
+            // Also close all dropdowns when navigating away
+            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        });
+    });
+    
+    // Close mobile menu when clicking a dropdown link
+    document.querySelectorAll('.dropdown-link').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            
+            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
         });
     });
 }

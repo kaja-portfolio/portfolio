@@ -596,28 +596,18 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    /* Hide overflow for the slider */
-    padding: 0 1rem;
-    /* Space for arrows if outside, or just padding */
+    padding: 1rem 0; /* Space for hover effects */
 }
 
 .services-grid {
     display: flex;
     gap: 2rem;
-    width: 100%;
-    /* Transformation handled by JS */
+    transition: transform 0.5s ease-in-out;
 }
 
 .services-grid .service-card {
-    /* Desktop: 3 columns. We account for the gap in JS or calc here. 
-       Formula: (100% - (gap * (visible - 1))) / visible
-       gap = 2rem. visible = 3.
-       (100% - 4rem) / 3 
-    */
     flex: 0 0 calc((100% - 4rem) / 3);
     min-width: 0;
-    margin: 0;
-    /* Handled by flex gap */
 }
 
 .service-card {
@@ -666,38 +656,16 @@
     color: #fff;
 }
 
-/* Mobile Responsive for Slider */
+/* Mobile Responsive slider */
 @media (max-width: 991px) {
     .services-grid .service-card {
-        /* Tablet: 2 columns? Or stick to 1? Prompt says "Display 1 column per slide" for mobile,
-           but usually 2 is good for tablet. Let's stick to prompt strictness:
-           "Desktop: 3 columns", "Mobile: 1 column".
-           I'll add a tablet breakpoint for 2 if it feels too wide, else 1.
-           Let's do 2 for tablet (768-991) and 1 for mobile (<768) strictly?
-           The prompt says "Mobile behavior: Display 1 column".
-           Let's assume < 768 is mobile.
-        */
         flex: 0 0 calc((100% - 2rem) / 2);
     }
 }
 
 @media (max-width: 768px) {
-    .services-grid {
-        gap: 1rem;
-    }
-
     .services-grid .service-card {
         flex: 0 0 100%;
-        /* 1 column */
-    }
-
-    .services-carousel-wrapper {
-        padding: 0;
-    }
-
-    .carousel-btn {
-        display: none;
-        /* Hide arrows on mobile */
     }
 }
 
