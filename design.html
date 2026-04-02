@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Portfolio</title>
+    <title>Design Projects - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="breadcrumb.css">
-    <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="projects.css">
     <link rel="stylesheet" href="footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -25,14 +25,14 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item has-dropdown">
-                    <a href="#" class="nav-link">My Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <a href="#" class="nav-link active">My Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="website.html" class="dropdown-link">Website</a></li>
                         <li><a href="design.html" class="dropdown-link">Design</a></li>
                         <li><a href="other-projects.html" class="dropdown-link">Other Work</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -45,11 +45,11 @@
     </nav>
 
     <!-- Breadcrumb -->
-    <section class="breadcrumb-section" data-page="skills">
+    <section class="breadcrumb-section" data-page="design">
         <div class="container">
             <div class="breadcrumb-heading">
-                <h1>Skills</h1>
-                <p>Technologies and tools I work with</p>
+                <h1>Design Projects</h1>
+                <p>Explore my latest design and UX/UI work</p>
             </div>
             <nav class="breadcrumb">
                 <a href="index.html" class="breadcrumb-item">
@@ -58,124 +58,104 @@
                 <span class="breadcrumb-separator">
                     <i class="fas fa-chevron-right"></i>
                 </span>
-                <span class="breadcrumb-item active">Skills</span>
+                <span class="breadcrumb-item active">Design</span>
             </nav>
         </div>
     </section>
 
-    <!-- Skills Hero -->
-    <section class="skills-hero">
-        <div class="container">
-            <h1 class="page-title">My Skills</h1>
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="projects-container" style="display: block;">
+            <main class="projects-content" style="width: 100%;">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="design">
+                        <div class="card-top">
+                            <h3>E-commerce App</h3>
+                        </div>
+                        <div class="project-preview">
+                            <img src="assets/1.png" alt="E-commerce App" class="lightbox-trigger">
+                            <div class="preview-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <p class="card-desc">Redesigned the entire shopping experience for a major fashion retailer,
+                            resulting in a 30% increase in conversions.</p>
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span class="card-tag">Photopea</span>
+                                <span class="card-tag">Canva AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="poster">
+                        <div class="card-top">
+                            <h3>Photo Frame Services</h3>
+                        </div>
+                        <div class="project-preview">
+                            <img src="assets/2.jpg" alt="Photo Frame Services" class="lightbox-trigger">
+                            <div class="preview-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <p class="card-desc">Designed a clean and visually engaging promotional poster for a photo frame
+                            service, highlighting pricing and brand messaging. <B style="color:white;">(specially designed for facebook story)</B></p>
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span class="card-tag">Poster</span>
+                                <span class="card-tag">Canva</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="poster">
+                        <div class="card-top">
+                            <h3>Food Promotion Poster</h3>
+                        </div>
+                        <div class="project-preview">
+                            <img src="assets/4.jpeg" alt="Food Promotion Poster" class="lightbox-trigger">
+                            <div class="preview-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <p class="card-desc">Designed an eye-catching food promotional poster highlighting a weekend
+                            special menu with strong visual appeal.</p>
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span class="card-tag">photoshop</span>
+                                <span class="card-tag">canva</span>
+                                <span class="card-tag">AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Project 4 Logo  -->
+                    <div class="project-card" data-category="poster">
+                        <div class="card-top">
+                            <h3>Logo Design</h3>
+                        </div>
+                        <div class="project-preview">
+                            <img src="assets/Logo1.png" alt="Logo design" class="lightbox-trigger">
+                            <div class="preview-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <p class="card-desc">A conceptual logo design crafted for modern brands aiming to establish a minimal and recognizable presence.</p>
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span class="card-tag">photoshop</span>
+                                <span class="card-tag">canva</span>
+                                <span class="card-tag">AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section">
-        <div class="container" id="skillsContainer">
-            <!-- Frontend Development -->
-            <div class="skills-category">
-                <h2 class="category-title">
-                    <i class="fas fa-code"></i>
-                    Frontend Development
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                        <h3>HTML5</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                        <span class="skill-percent">95%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                        <h3>CSS3</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="skill-percent">90%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-js"></i></div>
-                        <h3>JavaScript</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%;"></div>
-                        </div>
-                        <span class="skill-percent">88%</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Backend Development -->
-            <div class="skills-category">
-                <h2 class="category-title">
-                    <i class="fas fa-server"></i>
-                    Backend Development
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-php"></i></div>
-                        <h3>PHP</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%;"></div>
-                        </div>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <h3>MySQL</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 78%;"></div>
-                        </div>
-                        <span class="skill-percent">78%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-firebase"></i></div>
-                        <h3>Firebase</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Design & Tools -->
-            <div class="skills-category">
-                <h2 class="category-title">
-                    <i class="fas fa-paint-brush"></i>
-                    Design & Tools
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-palette"></i></div>
-                        <h3>Photoshop</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                        <h3>Canva</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%;"></div>
-                        </div>
-                        <span class="skill-percent">88%</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-sass"></i></div>
-                        <h3>Figma</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Project Image Modal (Full View) -->
+    <div id="imageModal" class="image-modal">
+        <span id="imageModalClose" class="image-modal-close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img id="modalImage" class="image-modal-content" alt="Project preview">
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" style="background-color: #060810;">
@@ -253,7 +233,7 @@
                 <nav class="footer-nav">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="projects.html">Our works</a>
+                    <a href="#">Our works</a>
                     <a href="services.html">Services</a>
                     <a href="skills.html">Skills</a>
                     <a href="contact.html">Contacts</a>
@@ -266,6 +246,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="projects.js"></script>
 </body>
 
 </html>
