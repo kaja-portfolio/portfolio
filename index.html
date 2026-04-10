@@ -7,7 +7,9 @@
     <title>Portfolio - Home</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -22,8 +24,8 @@
                 <span class="logo-text">Portfolio</span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item has-dropdown">
                     <a href="#" class="nav-link">My Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
                     <ul class="dropdown-menu">
@@ -32,9 +34,8 @@
                         <li><a href="other-projects.html" class="dropdown-link">Other Work</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -45,11 +46,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text">
@@ -64,7 +62,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="projects.html" class="btn btn-primary">View My Work</a>
-                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
@@ -177,184 +175,412 @@
     </section> 
     -->
 
-    <!-- Services Section -->
-    <section class="services-section">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h1 class="section-title">About <span class="orange-text">Me</span></h1>
+
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title-center">What I Do</h2>
-                <p class="section-subtitle">Comprehensive web development and design services</p>
-            </div>
-            <div class="services-carousel-wrapper">
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Custom website development using modern technologies and frameworks. From simple landing
-                            pages to complex web applications.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> Frontend Development</li>
-                            <li><i class="fas fa-check"></i> Backend Development</li>
-                            <li><i class="fas fa-check"></i> Full Stack Solutions</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>UI/UX Design</h3>
-                        <p>Creating intuitive and beautiful user interfaces that provide exceptional user experiences.
-                            Design that converts visitors into customers.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> User Interface Design</li>
-                            <li><i class="fas fa-check"></i> User Experience Design</li>
-                            <li><i class="fas fa-check"></i> Prototyping</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile Responsive</h3>
-                        <p>Ensuring your website looks perfect on all devices. Mobile-first approach for optimal
-                            performance across smartphones, tablets, and desktops.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> Responsive Design</li>
-                            <li><i class="fas fa-check"></i> Mobile Optimization</li>
-                            <li><i class="fas fa-check"></i> Cross-browser Testing</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>SEO Optimization</h3>
-                        <p>Improving your website's visibility in search engines. Technical SEO, content optimization,
-                            and performance enhancements.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> Technical SEO</li>
-                            <li><i class="fas fa-check"></i> Performance Optimization</li>
-                            <li><i class="fas fa-check"></i> Analytics Integration</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-edit"></i>
-                        </div>
-                        <h3>Content Creation</h3>
-                        <p>Engaging content that tells your story. From copywriting to visual content creation that
-                            resonates with your audience.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> Content Writing</li>
-                            <li><i class="fas fa-check"></i> Graphic Design</li>
-                            <li><i class="fas fa-check"></i> Video Editing</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Maintenance & Support</h3>
-                        <p>Ongoing support and maintenance to keep your website running smoothly. Regular updates,
-                            security patches, and technical support.</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check"></i> Regular Updates</li>
-                            <li><i class="fas fa-check"></i> Security Monitoring</li>
-                            <li><i class="fas fa-check"></i> 24/7 Support</li>
-                        </ul>
-                    </div>
+            <div class="about-image">
+                <div class="about-image-wrapper-3d">
+                    <img src="assets/img.jpeg" alt="Profile Picture">
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
-            <div class="carousel-controls">
-                <button class="carousel-btn prev-btn" id="services-prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="carousel-pagination" id="services-pagination"></div>
-                <button class="carousel-btn next-btn" id="services-next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+            <div class="about-content">
+                <p class="intro-text">
+                    <!-- Add your new paragraph content here -->
+                    I am a creative and detail-oriented WordPress Developer and Graphic Designer with a strong passion
+                    for building modern, user-friendly digital experiences. With hands-on experience in theme
+                    customization, branding, and SEO, I specialize in transforming ideas into visually compelling
+                    websites and professional designs. Currently an Intern at Webbuilders.lk, I am dedicated to
+                    delivering high-quality results while continuously expanding my technical skills in the IT field.
+                </p>
 
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section class="about-me-section">
-        <div class="container">
-            <div class="about-me-content">
-                <div class="about-me-image">
-                    <div class="about-image-wrapper">
-                        <div class="about-image-border"></div>
-                        <img src="assets/home.jpg" alt="About Me" class="about-photo">
-                        <div class="about-image-shapes">
-                            <div class="about-shape shape-1"></div>
-                            <div class="about-shape shape-2"></div>
-                            <div class="about-shape shape-3"></div>
-                        </div>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Positive Attitude</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Quick Learner</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Team Player</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Self Motivated</span>
                     </div>
                 </div>
-                <div class="about-me-text">
-                   
-                    <div class="about-content">
-                        <p class="about-description">
-                           I am a passionate web developer and designer who creates clean, responsive, and user-friendly digital experiences by combining strong frontend and backend skills with modern design thinking. I focus on building visually appealing websites and web applications that deliver smooth performance and meaningful user experiences.
-                        </p>
-                        
-                        <div class="about-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Positive Attitude</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Quick Learner</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Team Player</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Self Motivated</span>
-                            </div>
-                        </div>
-                        <div class="about-buttons">
-                            <a href="about.html" class="btn btn-primary">About Me</a>
-                            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-                        </div>
-                    </div>
+
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What Clients Say Section -->
-    <section class="user-reviews-section">
+    <!-- Education Section -->
+    <section class="education-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title-center">What Clients Say</h2>
-                <p class="section-subtitle">See what others are saying about their experience</p>
+            <div class="education-header">
+                <h2>Education</h2>
+                <div class="education-filters">
+                    <span class="filter-label">Filter:</span>
+                    <button class="edu-filter-btn active">All</button>
+                    <button class="edu-filter-btn">Degrees</button>
+                    <button class="edu-filter-btn">Certificates</button>
+                </div>
             </div>
 
-            <div id="userReviewsGrid" class="user-reviews-grid">
-                <!-- User reviews will be loaded here dynamically -->
-            </div>
+            <div class="education-layout">
+                <!-- Timeline Column -->
+                <div class="education-timeline-container">
+                    <div class="timeline-line"></div>
 
-            <div id="noReviewsMessage" class="no-reviews" style="display: none;">
-                <i class="fas fa-comments"></i>
-                <p>No reviews yet. Be the first to share your experience!</p>
+                    <!-- Entry 1 -->
+                    <div class="timeline-entry">
+                        <div class="timeline-dot"></div>
+                        <div class="edu-card">
+                            <div class="edu-icon-box">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="edu-card-content">
+                                <div class="edu-badge-row">
+                                    <span class="edu-badge">Certificate</span>
+                                    <span class="edu-date">2024</span>
+                                </div>
+                                <h3>Front end development</h3>
+                                <span class="edu-subtitle">CB Computer Education • 6-Month Intensive Course</span>
+                                <div class="edu-tags">
+                                    <span class="edu-tag">HTML5</span>
+                                    <span class="edu-tag">CSS3</span>
+                                    <span class="edu-tag">JavaScript</span>
+                                    <span class="edu-tag">Responsive Design</span>
+                                </div>
+
+                                <div class="edu-description-full">
+                                    I completed a 6-month Frontend Development course in 2024 at CB Computer Education.
+                                    During this program, I gained strong practical knowledge of core frontend
+                                    technologies, including HTML, CSS, JavaScript, and WordPress. I am experienced in
+                                    creating responsive, user-friendly web interfaces and converting design concepts
+                                    into functional web pages. My training focused on clean code practices, modern
+                                    layout techniques, and website customization using WordPress.
+                                </div>
+                                <button class="edu-view-more">
+                                    <span>View Details</span> <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entry 2 -->
+                    <div class="timeline-entry">
+                        <div class="timeline-dot"></div>
+                        <div class="edu-card">
+                            <div class="edu-icon-box">
+                                <i class="fab fa-wordpress"></i>
+                            </div>
+                            <div class="edu-card-content">
+                                <div class="edu-badge-row">
+                                    <span class="edu-badge">Certificate</span>
+                                    <span class="edu-date">2024</span>
+                                </div>
+                                <h3>WordPress Development</h3>
+                                <span class="edu-subtitle">CB Computer Education • Advanced Site Building</span>
+                                <div class="edu-tags">
+                                    <span class="edu-tag">Theme Customization</span>
+                                    <span class="edu-tag">Clean Code</span>
+                                    <span class="edu-tag">Performance</span>
+                                </div>
+
+                                <div class="edu-description-full">
+                                    I completed a 6-month WordPress Development course specializing in theme
+                                    architecture and site performance. My training focused on clean code practices,
+                                    modern layout techniques, and deep website customization. I am passionate about
+                                    building visually appealing and performance-optimized websites that provide the best
+                                    user experience.
+                                </div>
+                                <button class="edu-view-more">
+                                    <span>View Details</span> <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entry 3 -->
+                    <div class="timeline-entry">
+                        <div class="timeline-dot"></div>
+                        <div class="edu-card">
+                            <div class="edu-icon-box">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="edu-card-content">
+                                <div class="edu-badge-row">
+                                    <span class="edu-badge">Intern</span>
+                                    <span class="edu-date">2025</span>
+                                </div>
+                                <h3>Work Experience</h3>
+                                <span class="edu-subtitle">Webbuilder.lk • Web Development Intern</span>
+                                <div class="edu-tags">
+                                    <span class="edu-tag">PHP Plugin Dev</span>
+                                    <span class="edu-tag">Client Projects</span>
+                                    <span class="edu-tag">Workflow</span>
+                                </div>
+
+                                <div class="edu-description-full">
+                                    Currently contributing to real-world projects at Webbuilder.lk. I have developed
+                                    three complete WordPress websites, built two frontend websites using vanilla JS, and
+                                    created a custom PHP-based WordPress plugin for task management. This role has
+                                    sharpened my problem-solving skills and teamwork in a professional environment.
+                                </div>
+                                <button class="edu-view-more">
+                                    <span>View Details</span> <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar column -->
+                <div class="edu-sidebar">
+                    <h3>Highlights</h3>
+                    <div class="highlights-list">
+                        <div class="highlight-item-new">
+                            <div class="highlight-icon">🎓</div>
+                            <div class="highlight-text">
+                                <b>Modern Web Foundation</b>
+                                <p>Specialized in modern layouts and professional frontend architectures.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item-new">
+                            <div class="highlight-icon">⚡</div>
+                            <div class="highlight-text">
+                                <b>CMS Mastery</b>
+                                <p>Deep expertise in WordPress ecosystem and custom functionality.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item-new">
+                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-text">
+                                <b>Industry Exposure</b>
+                                <p>Hands-on experience delivering real-world projects at Webbuilder.lk.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-box">
+                        <a href="assets/transcript.pdf" class="edu-download-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i>
+                            Transcript.pdf
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h1 class="section-title" style="text-align: center; margin-bottom: 40px;">My <span class="orange-text">Skills</span></h1>
+        </div>
+        <div class="container" id="skillsContainer">
+            <!-- Frontend Development -->
+            <div class="skills-category">
+                <h2 class="category-title">
+                    <i class="fas fa-code"></i>
+                    Frontend Development
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML5</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS3</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                        <span class="skill-percent">88%</span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Backend Development -->
+            <div class="skills-category">
+                <h2 class="category-title">
+                    <i class="fas fa-server"></i>
+                    Backend Development
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-php"></i></div>
+                        <h3>PHP</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>MySQL</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 78%;"></div>
+                        </div>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-firebase"></i></div>
+                        <h3>Firebase</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design & Tools -->
+            <div class="skills-category">
+                <h2 class="category-title">
+                    <i class="fas fa-paint-brush"></i>
+                    Design & Tools
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Photoshop</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                        <h3>Canva</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                        <span class="skill-percent">88%</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-sass"></i></div>
+                        <h3>Figma</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" style="padding-top: 80px;">
+        <div class="container">
+            <h1 class="section-title" style="text-align: center; margin-bottom: 40px;">Get In <span class="orange-text">Touch</span></h1>
+        </div>
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        visions.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Email</h3>
+                                <p>kajankajan200407@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Phone</h3>
+                                <p>077 814 9517</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Location</h3>
+                                <p>Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Follow Me</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: #060810;">
+    <footer class="footer" style="background-color: #171717;">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-grid">
@@ -427,12 +653,11 @@
             </div>
             <div class="footer-bottom">
                 <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
                     <a href="projects.html">Our works</a>
-                    <a href="services.html">Services</a>
-                    <a href="skills.html">Skills</a>
-                    <a href="contact.html">Contacts</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contacts</a>
                 </nav>
                 <div class="footer-copyright">
                     <span>© 2025-2030 Portfolio. All rights reserved.</span>
@@ -443,91 +668,8 @@
 
     <script src="script.js"></script>
     <script src="home.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const track = document.querySelector('.services-grid');
-            const prevBtn = document.getElementById('services-prev');
-            const nextBtn = document.getElementById('services-next');
-            const paginationContainer = document.getElementById('services-pagination');
-            
-            if (!track || !prevBtn || !nextBtn) return;
-
-            const cards = Array.from(track.children);
-            const totalCards = cards.length;
-            
-            let cardsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 991 ? 2 : 3);
-            let currentIndex = 0;
-            
-            const maxIndex = () => Math.max(0, totalCards - cardsPerView);
-            
-            const renderPagination = () => {
-                if (!paginationContainer) return;
-                paginationContainer.innerHTML = '';
-                const pages = maxIndex() + 1;
-                for (let i = 0; i < pages; i++) {
-                    const dot = document.createElement('button');
-                    dot.classList.add('pagination-dot');
-                    if (i === currentIndex) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        currentIndex = i;
-                        updateSlider();
-                    });
-                    paginationContainer.appendChild(dot);
-                }
-            };
-            
-            const updateSlider = () => {
-                const cardWidth = cards[0].offsetWidth;
-                const actualGap = parseFloat(window.getComputedStyle(track).gap) || 0;
-                
-                const moveAmount = currentIndex * (cardWidth + actualGap);
-                track.style.transform = `translate3d(-${moveAmount}px, 0, 0)`;
-                
-                if (paginationContainer) {
-                    Array.from(paginationContainer.children).forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
-                }
-            };
-
-            const goToNext = () => {
-                if (currentIndex < maxIndex()) {
-                    currentIndex++;
-                } else {
-                    currentIndex = 0;
-                }
-                updateSlider();
-            };
-
-            const goToPrev = () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                } else {
-                    currentIndex = maxIndex();
-                }
-                updateSlider();
-            };
-
-            nextBtn.addEventListener('click', goToNext);
-            prevBtn.addEventListener('click', goToPrev);
-
-            window.addEventListener('resize', () => {
-                const newCardsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 991 ? 2 : 3);
-                if (newCardsPerView !== cardsPerView) {
-                    cardsPerView = newCardsPerView;
-                    if (currentIndex > maxIndex()) {
-                        currentIndex = maxIndex();
-                    }
-                    renderPagination();
-                }
-                updateSlider();
-            });
-
-            // Initial setup
-            renderPagination();
-            updateSlider();
-        });
-    </script>
+    <script src="about.js"></script>
+    <script src="contact.js"></script>
 </body>
 
 </html>

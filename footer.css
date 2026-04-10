@@ -1,6 +1,6 @@
 /* ===== FOOTER STYLES ===== */
 .footer {
-    background: #1A2036;
+    background: #171717;
     color: #ffffff;
     padding: 60px 0 0;
     margin-top: 100px;
@@ -101,7 +101,7 @@
 
 .footer-subscribe button {
     padding: 0.7rem 1.2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FD853A 0%, #FEB273 100%);
     border: none;
     border-radius: 25px;
     color: #ffffff;
@@ -114,7 +114,7 @@
 }
 
 .footer-subscribe button:hover {
-    background: #ff8555;
+    background: #FEB273;
     transform: translateY(-1px);
 }
 
@@ -182,7 +182,7 @@
 .footer-instagram-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FD853A 0%, #FEB273 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,7 +216,7 @@
 }
 
 .footer-nav a:hover {
-    color: #ff6b35;
+    color: #FD853A;
 }
 
 .footer-copyright {
