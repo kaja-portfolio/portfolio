@@ -64,18 +64,42 @@
 
     <!-- Projects Grid -->
     <section class="projects-section">
-        <div class="projects-container" style="display: block; min-height: 50vh; text-align: center;">
+        <div class="projects-container" style="display: block;">
             <main class="projects-content" style="width: 100%;">
-                <div style="padding: 100px 20px;">
-                    <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-main);">More Projects Coming Soon</h2>
-                    <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                        I am currently working on some exciting new projects that don't fit into the traditional web or design categories. Check back later to see what I've been up to!
-                    </p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 30px; display: inline-block;">Get In Touch</a>
+                <div class="projects-grid">
+                    <!-- Project SEO -->
+                    <div class="project-card" data-category="seo">
+                        <div class="card-top">
+                            <h3>Local SEO Optimization</h3>
+                        </div>
+                        <div class="project-preview">
+                            <img src="assets/bg.jpeg" alt="Local SEO Google Business Profile" class="lightbox-trigger">
+                            <div class="preview-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <p class="card-desc">Comprehensive Local SEO and Google Business Profile optimization to improve search rankings, manage reviews, and attract local customers.</p>
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span class="card-tag">Local SEO</span>
+                                <span class="card-tag">Google Business</span>
+                                <span class="card-tag">Optimization</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" onclick="event.preventDefault();"><i class="fas fa-chart-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
     </section>
+
+    <!-- Project Image Modal (Full View) -->
+    <div id="imageModal" class="image-modal">
+        <span id="imageModalClose" class="image-modal-close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img id="modalImage" class="image-modal-content" alt="Project preview">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" style="background-color: #171717;">
@@ -165,6 +189,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="projects.js"></script>
 </body>
 
 </html>
