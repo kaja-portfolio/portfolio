@@ -210,6 +210,10 @@
     .contact-method {
         justify-content: center;
     }
+    
+    .method-content {
+        text-align: left;
+    }
 
     .social-links {
         justify-content: center;
@@ -217,6 +221,10 @@
 }
 
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 50px 0 60px;
+    }
+
     .contact-hero {
         padding: 120px 0 60px;
     }
@@ -227,6 +235,117 @@
 
     .contact-form-wrapper {
         padding: 1.5rem;
+    }
+    
+    .contact-method {
+        padding: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section {
+        padding-top: 50px !important;
+    }
+    
+    .contact-section .section-title {
+        font-size: 2rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .contact-wrapper {
+        gap: 2.5rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-info > p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .contact-methods {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+        padding: 1.25rem;
+    }
+
+    .method-content {
+        text-align: center;
+    }
+
+    .method-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .social-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .social-links {
+        gap: 0.8rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.25rem;
+        border-radius: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+    
+    .contact-form .btn-primary {
+        padding: 0.8rem;
+        font-size: 1rem;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding-top: 40px !important;
+        padding-bottom: 60px;
+    }
+    
+    .contact-section .section-title {
+        font-size: 1.75rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    .contact-wrapper {
+        gap: 2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1rem;
+    }
+    
+    .contact-method {
+        padding: 1rem;
     }
 }
 

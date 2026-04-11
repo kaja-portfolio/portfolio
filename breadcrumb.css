@@ -1,13 +1,14 @@
 /* ===== BREADCRUMB SECTION ===== */
 .breadcrumb-section {
-    padding: 100px 0 50px;
-    height: 80%;
+    padding: 120px 0 60px;
     width: 100%;
     position: relative;
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgba(26, 32, 54, 0.95);
+    background-attachment: fixed;
     overflow: hidden;
 }
 

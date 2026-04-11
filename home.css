@@ -1140,6 +1140,11 @@
         text-align: center;
     }
 
+    .dynamic-role {
+        min-width: auto;
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 3rem;
     }
@@ -1239,6 +1244,18 @@
         display: none;
     }
 
+    .hero-buttons {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
     /* Increase typing role text size for mobile */
     .typing-role {
         font-size: 1.8rem !important;
@@ -1247,7 +1264,8 @@
     .dynamic-role {
         font-size: 1.8rem !important;
         min-height: 40px !important;
-        min-width: 16ch !important;
+        min-width: auto !important;
+        text-align: center !important;
     }
 
     .hero-title .line.dynamic-role {
@@ -1418,11 +1436,24 @@
     .dynamic-role {
         font-size: 1.5rem !important;
         min-height: 35px !important;
-        min-width: 15ch !important;
+        min-width: auto !important;
+        text-align: center !important;
     }
 
     .hero-title .line.dynamic-role {
         font-size: 1.5rem !important;
+    }
+
+    .hero-buttons {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 
     /* About Me Section Small Mobile */
